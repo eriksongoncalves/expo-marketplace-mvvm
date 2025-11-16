@@ -40,7 +40,7 @@ module.exports = defineConfig([
       '@typescript-eslint': tseslint,
       import: importPlugin,
       prettier: prettierPlugin,
-      'tanstack-query': tanstackQuery
+      '@tanstack/query': tanstackQuery
     },
 
     rules: {
@@ -48,17 +48,19 @@ module.exports = defineConfig([
       ...prettierConfig.rules,
 
       'prettier/prettier': [
-        'error',
-        {
-          printWidth: 100,
-          tabWidth: 2,
-          useTabs: false,
-          trailingComma: 'none',
-          arrowParens: 'avoid',
-          semi: false,
-          bracketSpacing: true,
-          singleQuote: true
-        }
+        'error'
+        // {
+        //   tabWidth: 2,
+        //   useTabs: false,
+        //   trailingComma: 'none',
+        //   arrowParens: 'avoid',
+        //   semi: false,
+        //   bracketSpacing: true,
+        //   singleQuote: true,
+        //   endOfLine: 'auto',
+        //   printWidth: 100,
+        //   plugins: ['prettier-plugin-tailwindcss']
+        // }
       ],
 
       'react/prop-types': 'off',
