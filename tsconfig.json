@@ -4,12 +4,7 @@
     "strict": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
-      "@screens/*": ["./src/screens/*"],
-      "@assets/*": ["./src/assets/*"],
-      "@shared/*": ["./src/shared/*"],
-      "@routes/*": ["./src/routes/*"]
+      "@/*": ["./src/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
