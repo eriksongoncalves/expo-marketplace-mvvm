@@ -6,6 +6,7 @@ const reactHooksPlugin = require('eslint-plugin-react-hooks')
 const importPlugin = require('eslint-plugin-import')
 const prettierPlugin = require('eslint-plugin-prettier')
 const prettierConfig = require('eslint-config-prettier')
+const tanstackQuery = require('@tanstack/eslint-plugin-query')
 
 module.exports = defineConfig([
   {
@@ -38,10 +39,12 @@ module.exports = defineConfig([
       'react-hooks': reactHooksPlugin,
       '@typescript-eslint': tseslint,
       import: importPlugin,
-      prettier: prettierPlugin
+      prettier: prettierPlugin,
+      'tanstack-query': tanstackQuery
     },
 
     rules: {
+      ...tanstackQuery.configs.recommended.rules,
       ...prettierConfig.rules,
 
       'prettier/prettier': [
