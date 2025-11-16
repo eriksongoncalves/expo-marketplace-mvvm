@@ -7,8 +7,8 @@ module.exports = {
   arrowParens: 'avoid',
   semi: false,
   bracketSpacing: true,
-  singleQuote: true,
+  singleQuote: true
 
   // Plugins
-  plugins: ['prettier-plugin-tailwindcss']
+  // plugins: ["prettier-plugin-tailwindcss"],
 }
