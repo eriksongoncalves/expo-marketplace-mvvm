@@ -3,9 +3,11 @@ import { useForm } from 'react-hook-form'
 
 import { RegisterFormData, registerScheme } from './register.scheme'
 import { useRegisterMutation } from '@/shared/queries/auth/use-register.mutation'
+import { useUserStore } from '@/shared/store/user-store'
 
 export const useRegisterViewModel = () => {
   const userRgisterMutation = useRegisterMutation()
+  const { setSession } = useUserStore()
 
   const {
     control,
@@ -26,7 +28,13 @@ export const useRegisterViewModel = () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { confirmPassword, ...registerData } = userData
 
-    await userRgisterMutation.mutateAsync(registerData)
+    const response = await userRgisterMutation.mutateAsync(registerData)
+
+    setSession({
+      refreshToken: response.refreshToken,
+      token: response.token,
+      user: response.user
+    })
   })
 
   return {
