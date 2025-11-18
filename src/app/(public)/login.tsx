@@ -1,14 +1,8 @@
-import { View, Text, TouchableOpacity } from 'react-native'
-import { router } from 'expo-router'
+import LoginView from '@/view-models/login/login.view'
+import { useLoginViewModel } from '@/view-models/login/useLogin.viewModel'
 
 export default function Login() {
-  return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="text-xl font-bold text-blue-500">Welcome to Login!</Text>
+  const props = useLoginViewModel()
 
-      <TouchableOpacity onPress={() => router.push('register')}>
-        <Text className="mt-6 text-xl">Registar</Text>
-      </TouchableOpacity>
-    </View>
-  )
+  return <LoginView {...props} />
 }
